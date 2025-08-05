@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Jewelry Billing Software - Mukul Verma</title>
+  <meta content="Professional billing software for jewelry stores" name="description">
+  <meta content="jewelry, billing, software, invoice, goldsmith" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Custom CSS for Billing Software -->
+  <style>
+    .billing-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    
+    .billing-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      margin: -30px -30px 30px -30px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      border-radius: 8px;
+      border: 2px solid #e9ecef;
+      padding: 12px;
+      font-size: 14px;
+    }
+    
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    .btn-secondary {
+      background: #6c757d;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    .btn-success {
+      background: #28a745;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    .btn-danger {
+      background: #dc3545;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    
+    .item-table {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .table {
+      margin-bottom: 0;
+    }
+    
+    .table thead th {
+      background: #667eea;
+      color: white;
+      border: none;
+      font-weight: 600;
+    }
+    
+    .table tbody td {
+      vertical-align: middle;
+      padding: 15px 8px;
+    }
+    
+    .total-section {
+      background: #e9ecef;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    
+    .total-amount {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .invoice-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .customer-info {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+    }
+    
+    .back-to-portfolio {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+    
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      .billing-container {
+        box-shadow: none;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Back to Portfolio Button -->
+  <div class="back-to-portfolio no-print">
+    <a href="index.html" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Back to Portfolio
+    </a>
+  </div>
+
+  <div class="container mt-5">
+    <div class="billing-container">
+      <div class="billing-header">
+        <h1><i class="bi bi-gem"></i> Jewelry Billing Software</h1>
+        <p class="mb-0">Professional billing solution for jewelry stores</p>
+      </div>
+
+      <!-- Shop Information -->
+      <div class="invoice-header">
+        <h2>Golden Gems Jewelry Store</h2>
+        <p>123 Diamond Street, Jewelry District<br>
+        Phone: +91-9876543210 | Email: contact@goldengems.com<br>
+        GST No: 22AAAAA0000A1Z5</p>
+      </div>
+
+      <!-- Customer Information Form -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="customer-info">
+            <h4><i class="bi bi-person"></i> Customer Information</h4>
+            <div class="form-group">
+              <label for="customerName">Customer Name *</label>
+              <input type="text" class="form-control" id="customerName" placeholder="Enter customer name" required>
+            </div>
+            <div class="form-group">
+              <label for="customerPhone">Phone Number</label>
+              <input type="tel" class="form-control" id="customerPhone" placeholder="Enter phone number">
+            </div>
+            <div class="form-group">
+              <label for="customerAddress">Address</label>
+              <textarea class="form-control" id="customerAddress" rows="2" placeholder="Enter customer address"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="customer-info">
+            <h4><i class="bi bi-calendar"></i> Invoice Details</h4>
+            <div class="form-group">
+              <label for="invoiceNumber">Invoice Number</label>
+              <input type="text" class="form-control" id="invoiceNumber" readonly>
+            </div>
+            <div class="form-group">
+              <label for="invoiceDate">Invoice Date</label>
+              <input type="date" class="form-control" id="invoiceDate">
+            </div>
+            <div class="form-group">
+              <label for="paymentMode">Payment Mode</label>
+              <select class="form-control" id="paymentMode">
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+                <option value="upi">UPI</option>
+                <option value="cheque">Cheque</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Item Form -->
+      <div class="item-table">
+        <h4><i class="bi bi-plus-circle"></i> Add Jewelry Item</h4>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="itemName">Item Name *</label>
+              <input type="text" class="form-control" id="itemName" placeholder="e.g., Gold Ring">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="itemWeight">Weight (grams)</label>
+              <input type="number" class="form-control" id="itemWeight" placeholder="0.00" step="0.01">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="itemPurity">Purity (K)</label>
+              <select class="form-control" id="itemPurity">
+                <option value="22">22K</option>
+                <option value="18">18K</option>
+                <option value="14">14K</option>
+                <option value="silver">Silver</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="itemRate">Rate/gram (₹)</label>
+              <input type="number" class="form-control" id="itemRate" placeholder="0.00" step="0.01">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="makingCharges">Making Charges (₹)</label>
+              <input type="number" class="form-control" id="makingCharges" placeholder="0.00" step="0.01">
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <label>&nbsp;</label>
+              <button type="button" class="btn btn-primary btn-block" onclick="addItem()">
+                <i class="bi bi-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Items Table -->
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Weight (g)</th>
+              <th>Purity</th>
+              <th>Rate/g (₹)</th>
+              <th>Making Charges (₹)</th>
+              <th>Total (₹)</th>
+              <th class="no-print">Action</th>
+            </tr>
+          </thead>
+          <tbody id="itemsTableBody">
+            <!-- Items will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Total Calculation -->
+      <div class="total-section">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="discountPercent">Discount (%)</label>
+                  <input type="number" class="form-control" id="discountPercent" value="0" min="0" max="100" onchange="calculateTotal()">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="gstPercent">GST (%)</label>
+                  <input type="number" class="form-control" id="gstPercent" value="3" min="0" max="100" onchange="calculateTotal()">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-right">
+              <p><strong>Subtotal: ₹<span id="subtotal">0.00</span></strong></p>
+              <p><strong>Discount: -₹<span id="discountAmount">0.00</span></strong></p>
+              <p><strong>GST: +₹<span id="gstAmount">0.00</span></strong></p>
+              <hr>
+              <p class="total-amount">Total: ₹<span id="grandTotal">0.00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="text-center mt-4 no-print">
+        <button type="button" class="btn btn-success" onclick="generateInvoice()">
+          <i class="bi bi-file-earmark-text"></i> Generate Invoice
+        </button>
+        <button type="button" class="btn btn-primary" onclick="printInvoice()">
+          <i class="bi bi-printer"></i> Print Invoice
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="clearForm()">
+          <i class="bi bi-arrow-clockwise"></i> Clear Form
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Billing Functionality -->
+  <script>
+    let itemCounter = 0;
+    let items = [];
+
+    // Initialize invoice number and date
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('invoiceNumber').value = generateInvoiceNumber();
+      document.getElementById('invoiceDate').value = new Date().toISOString().split('T')[0];
+    });
+
+    function generateInvoiceNumber() {
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+      return `INV${year}${month}${day}${random}`;
+    }
+
+    function addItem() {
+      const itemName = document.getElementById('itemName').value.trim();
+      const itemWeight = parseFloat(document.getElementById('itemWeight').value) || 0;
+      const itemPurity = document.getElementById('itemPurity').value;
+      const itemRate = parseFloat(document.getElementById('itemRate').value) || 0;
+      const makingCharges = parseFloat(document.getElementById('makingCharges').value) || 0;
+
+      if (!itemName) {
+        alert('Please enter item name');
+        return;
+      }
+
+      if (itemWeight <= 0) {
+        alert('Please enter valid weight');
+        return;
+      }
+
+      if (itemRate <= 0) {
+        alert('Please enter valid rate');
+        return;
+      }
+
+      const total = (itemWeight * itemRate) + makingCharges;
+      
+      const item = {
+        id: ++itemCounter,
+        name: itemName,
+        weight: itemWeight,
+        purity: itemPurity,
+        rate: itemRate,
+        makingCharges: makingCharges,
+        total: total
+      };
+
+      items.push(item);
+      addItemToTable(item);
+      clearItemForm();
+      calculateTotal();
+    }
+
+    function addItemToTable(item) {
+      const tbody = document.getElementById('itemsTableBody');
+      const row = tbody.insertRow();
+      
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.weight.toFixed(2)}</td>
+        <td>${item.purity}${item.purity !== 'silver' ? 'K' : ''}</td>
+        <td>₹${item.rate.toFixed(2)}</td>
+        <td>₹${item.makingCharges.toFixed(2)}</td>
+        <td>₹${item.total.toFixed(2)}</td>
+        <td class="no-print">
+          <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(${item.id})">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      `;
+    }
+
+    function removeItem(itemId) {
+      items = items.filter(item => item.id !== itemId);
+      refreshTable();
+      calculateTotal();
+    }
+
+    function refreshTable() {
+      const tbody = document.getElementById('itemsTableBody');
+      tbody.innerHTML = '';
+      items.forEach(item => addItemToTable(item));
+    }
+
+    function clearItemForm() {
+      document.getElementById('itemName').value = '';
+      document.getElementById('itemWeight').value = '';
+      document.getElementById('itemRate').value = '';
+      document.getElementById('makingCharges').value = '';
+    }
+
+    function calculateTotal() {
+      const subtotal = items.reduce((sum, item) => sum + item.total, 0);
+      const discountPercent = parseFloat(document.getElementById('discountPercent').value) || 0;
+      const gstPercent = parseFloat(document.getElementById('gstPercent').value) || 0;
+      
+      const discountAmount = (subtotal * discountPercent) / 100;
+      const taxableAmount = subtotal - discountAmount;
+      const gstAmount = (taxableAmount * gstPercent) / 100;
+      const grandTotal = taxableAmount + gstAmount;
+
+      document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+      document.getElementById('discountAmount').textContent = discountAmount.toFixed(2);
+      document.getElementById('gstAmount').textContent = gstAmount.toFixed(2);
+      document.getElementById('grandTotal').textContent = grandTotal.toFixed(2);
+    }
+
+    function generateInvoice() {
+      const customerName = document.getElementById('customerName').value.trim();
+      
+      if (!customerName) {
+        alert('Please enter customer name');
+        return;
+      }
+
+      if (items.length === 0) {
+        alert('Please add at least one item');
+        return;
+      }
+
+      alert('Invoice generated successfully!');
+    }
+
+    function printInvoice() {
+      if (items.length === 0) {
+        alert('Please add items before printing');
+        return;
+      }
+      
+      window.print();
+    }
+
+    function clearForm() {
+      if (confirm('Are you sure you want to clear all data?')) {
+        // Clear customer info
+        document.getElementById('customerName').value = '';
+        document.getElementById('customerPhone').value = '';
+        document.getElementById('customerAddress').value = '';
+        
+        // Reset invoice details
+        document.getElementById('invoiceNumber').value = generateInvoiceNumber();
+        document.getElementById('invoiceDate').value = new Date().toISOString().split('T')[0];
+        document.getElementById('paymentMode').value = 'cash';
+        
+        // Clear items
+        items = [];
+        itemCounter = 0;
+        document.getElementById('itemsTableBody').innerHTML = '';
+        
+        // Reset totals
+        document.getElementById('discountPercent').value = '0';
+        document.getElementById('gstPercent').value = '3';
+        calculateTotal();
+        
+        clearItemForm();
+      }
+    }
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
