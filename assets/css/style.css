@@ -1213,3 +1213,198 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# UI Automation Tools Section
+--------------------------------------------------------------*/
+.automation-tools {
+  padding: 60px 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.automation-tools .section-title h2 {
+  font-size: 32px;
+  color: #18d26e;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #18d26e;
+}
+
+.automation-tools .automation-intro {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.automation-tools .tool-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.automation-tools .tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(24, 210, 110, 0.2);
+}
+
+.automation-tools .tool-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.automation-tools .tool-header i {
+  font-size: 24px;
+  color: #18d26e;
+  margin-right: 15px;
+}
+
+.automation-tools .tool-header h4 {
+  color: #fff;
+  margin: 0;
+  font-size: 20px;
+}
+
+.automation-tools .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.automation-tools .form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #18d26e;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(24, 210, 110, 0.25);
+}
+
+.automation-tools .form-control::placeholder {
+  color: #aaa;
+}
+
+.automation-tools .btn-primary {
+  background: linear-gradient(45deg, #18d26e, #35e888);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.automation-tools .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(24, 210, 110, 0.4);
+}
+
+.automation-tools .btn-success {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.automation-tools .btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.automation-tools .btn-secondary {
+  background: linear-gradient(45deg, #6c757d, #868e96);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.automation-tools .btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+.automation-tools .url-results,
+.automation-tools .test-results {
+  background: rgba(24, 210, 110, 0.1);
+  border: 1px solid rgba(24, 210, 110, 0.3);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.automation-tools .result-item {
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.automation-tools .result-item:last-child {
+  border-bottom: none;
+}
+
+.automation-tools .result-item strong {
+  color: #18d26e;
+  margin-right: 10px;
+}
+
+.automation-tools .test-log {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff00;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.automation-tools .code-output {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.automation-tools label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.automation-tools select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.automation-tools select option {
+  background: #040404;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .automation-tools .tool-card {
+    padding: 20px;
+  }
+  
+  .automation-tools .section-title h2 {
+    font-size: 28px;
+  }
+}
