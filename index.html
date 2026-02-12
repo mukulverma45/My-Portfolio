@@ -53,6 +53,7 @@
                     <li><a class="nav-link" href="#about">About</a></li>
                     <li><a class="nav-link" href="#resume">Resume</a></li>
                     <li><a class="nav-link" href="#services">Services</a></li>
+                    <li><a class="nav-link" href="#automation-tools">Automation Tools</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -695,6 +696,142 @@
 
         </div>
     </section><!-- End Portfolio Section -->
+
+    <!-- ======= UI Automation Tools Section ======= -->
+    <section id="automation-tools" class="automation-tools">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>UI Automation Tools</h2>
+                <p>Practical Automation Solutions for QA Testing</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="automation-intro">
+                        <p>Leveraging my experience with Selenium UI automation and printer testing, I've developed practical tools to streamline QA processes. Below are interactive demos showcasing automation capabilities for URL parsing and printer interface testing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- URL Parser Tool -->
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bx bx-link-external"></i>
+                            <h4>URL Parser & Validator</h4>
+                        </div>
+                        <p>Parse and validate URLs for printer web interfaces and automation testing. This tool extracts components and validates URL structure for automation scripts.</p>
+                        
+                        <div class="url-input-section">
+                            <label for="urlInput">Enter URL:</label>
+                            <input type="url" id="urlInput" class="form-control" placeholder="http://192.168.1.100:80/printers/status" />
+                            <button id="parseBtn" class="btn btn-primary mt-2">Parse URL</button>
+                        </div>
+
+                        <div id="urlResults" class="url-results mt-3" style="display:none;">
+                            <h6>Parsed Components:</h6>
+                            <div class="result-item">
+                                <strong>Protocol:</strong> <span id="protocol"></span>
+                            </div>
+                            <div class="result-item">
+                                <strong>Host:</strong> <span id="host"></span>
+                            </div>
+                            <div class="result-item">
+                                <strong>Port:</strong> <span id="port"></span>
+                            </div>
+                            <div class="result-item">
+                                <strong>Path:</strong> <span id="path"></span>
+                            </div>
+                            <div class="result-item">
+                                <strong>Query Parameters:</strong> <span id="query"></span>
+                            </div>
+                            <div class="result-item">
+                                <strong>Validation Status:</strong> <span id="validation"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Printer Test Automation -->
+                <div class="col-lg-6">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bx bx-printer"></i>
+                            <h4>Printer Interface Tester</h4>
+                        </div>
+                        <p>Simulate automated testing scenarios for printer web interfaces. Based on real experience with Canon, KM, and Lexmark certifications.</p>
+                        
+                        <div class="printer-config">
+                            <label for="printerType">Printer Brand:</label>
+                            <select id="printerType" class="form-control">
+                                <option value="canon">Canon</option>
+                                <option value="km">Konica Minolta</option>
+                                <option value="lexmark">Lexmark</option>
+                                <option value="generic">Generic</option>
+                            </select>
+                            
+                            <label for="testType" class="mt-2">Test Type:</label>
+                            <select id="testType" class="form-control">
+                                <option value="authentication">Authentication Test</option>
+                                <option value="status">Status Check</option>
+                                <option value="compatibility">Compatibility Test</option>
+                                <option value="security">Security Validation</option>
+                            </select>
+                            
+                            <button id="runTestBtn" class="btn btn-success mt-3">Run Automation Test</button>
+                        </div>
+
+                        <div id="testResults" class="test-results mt-3" style="display:none;">
+                            <h6>Test Results:</h6>
+                            <div id="testLog" class="test-log"></div>
+                            <div class="test-status mt-2">
+                                <strong>Status:</strong> <span id="testStatus"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selenium Code Generator -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bx bx-code-curly"></i>
+                            <h4>Selenium C# Code Generator</h4>
+                        </div>
+                        <p>Generate Selenium WebDriver C# code for common printer interface testing scenarios. This reflects my experience in developing modularized automation tests.</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="actionType">Action Type:</label>
+                                <select id="actionType" class="form-control">
+                                    <option value="login">Login Authentication</option>
+                                    <option value="navigation">Page Navigation</option>
+                                    <option value="status_check">Status Verification</option>
+                                    <option value="form_fill">Form Interaction</option>
+                                </select>
+                                
+                                <label for="elementSelector" class="mt-2">Element Selector:</label>
+                                <input type="text" id="elementSelector" class="form-control" placeholder="id, class, xpath, or css selector" />
+                                
+                                <button id="generateCodeBtn" class="btn btn-primary mt-3">Generate C# Code</button>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Generated Selenium C# Code:</label>
+                                <textarea id="generatedCode" class="form-control code-output" rows="10" readonly></textarea>
+                                <button id="copyCodeBtn" class="btn btn-secondary mt-2">Copy Code</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End UI Automation Tools Section -->
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container">
